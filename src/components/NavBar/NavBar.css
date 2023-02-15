@@ -1,0 +1,15 @@
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+li {
+  list-style-type: none;
+  font-weight: 700;
+  width: 100%;
+}
+
+.navbar {
+  border-bottom: solid 2px black;
+}
