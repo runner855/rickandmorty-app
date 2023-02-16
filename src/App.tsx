@@ -1,15 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.css";
-import Call from "./api/Call";
-import NavBar from "./components/NavBar/NavBar";
+import { NavBar } from "./components/NavBar/NavBar";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { AppUrls } from "./types/Apptypes";
+import { PageStructure } from "./components/PageStructure/PageStructure";
 
 export const App = () => {
-  useEffect(() => {
-    Call.get(`character`, {}).then((res) => {});
-  }, []);
   return (
     <div className="container">
       <NavBar />
+      <Routes>
+        <Route path="/" element={<Navigate to={AppUrls.CHARACTERS} />} />
+        <Route path="/:page" element={<PageStructure />} />
+      </Routes>
     </div>
   );
 };
