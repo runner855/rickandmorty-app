@@ -132,6 +132,7 @@
     top: 0;
     left: 0;
     transform: translate(25%, 50%);
+    height: 2em;
   }
 
   .menu-icon {
@@ -143,4 +144,11 @@
     font-size: 1.8rem;
     cursor: pointer;
   }
+}
+
+.user_avatar {
+  height: 3.1em;
+  margin: 0.4em;
+  border-radius: 50px;
+  border: 2px solid #fff;
 }

@@ -17,7 +17,7 @@ export const PageStructure = () => {
   console.log(data);
   return (
     <div>
-      <Render />
+      <Render data={data} />
     </div>
   );
 };

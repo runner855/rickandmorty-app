@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+
+.main_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.image_caption {
+  font-family: "Caveat", cursive;
+  font-size: 1em;
+
+  margin-bottom: 2em;
+}
+
+.article_image {
+  width: 17em;
+  height: 14em;
+  border-radius: 1em 0em 0em 1em;
+}
+
+.card_container {
+  margin: 1em;
+  display: flex;
+  flex-direction: row;
+  border: solid 1px black;
+  border-radius: 1em;
+  width: 40em;
+  height: 14em;
+  background-color: #3c3e43;
+}
+
+.card_container:hover {
+  cursor: pointer;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 1.5em;
+  margin-bottom: 0.4em;
+  color: #fff;
+}
+
+.article_author {
+  font-weight: 800;
+  margin-top: 1em;
+}
+
+.article_content {
+  font-size: 1.2em;
+  overflow: hidden;
+  line-height: 2rem;
+  max-height: 8rem;
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+}
+
+.text_content {
+  margin: 1em;
+}
+
+.alive {
+  color: greenyellow;
+  display: flex;
+  flex-direction: row;
+}
+
+.dead {
+  color: red;
+  display: flex;
+  flex-direction: row;
+}
+
+.alive_text {
+  color: #fff;
+  line-height: 1;
+}
+
+.dead_text {
+  line-height: 1;
+  color: #fff;
+}
+
+.type {
+  line-height: 1;
+  margin-left: 0.4em;
+  color: #fff;
+}

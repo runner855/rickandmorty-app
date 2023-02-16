@@ -14,7 +14,7 @@ export interface DataProps {
   gender: string;
   id: number;
   image: string;
-  location: LocationProps;
+  location: LocationProps[];
   origin: OriginProps;
   species: string;
   status: string;
