@@ -8,14 +8,8 @@
   justify-content: space-around;
 }
 
-.image_caption {
-  font-family: "Caveat", cursive;
-  font-size: 1em;
-
-  margin-bottom: 2em;
-}
-
-.article_image {
+.character_image,
+.image_not_available {
   width: 17em;
   height: 14em;
   border-radius: 1em 0em 0em 1em;
@@ -27,7 +21,7 @@
   flex-direction: row;
   border: solid 1px black;
   border-radius: 1em;
-  width: 40em;
+  width: 35em;
   height: 14em;
   background-color: #3c3e43;
 }
@@ -36,9 +30,9 @@
   cursor: pointer;
 }
 
-.title {
+.name {
   font-weight: 800;
-  font-size: 1.5em;
+  font-size: 1.3em;
   margin-bottom: 0.4em;
   color: #fff;
 }
@@ -48,21 +42,21 @@
   margin-top: 1em;
 }
 
-.article_content {
+.character_details_content {
   font-size: 1.2em;
+  line-height: 2.2rem;
   overflow: hidden;
-  line-height: 2rem;
-  max-height: 8rem;
   -webkit-box-orient: vertical;
   display: block;
   display: -webkit-box;
   overflow: hidden !important;
   text-overflow: ellipsis;
   -webkit-line-clamp: 3;
+  width: 100%;
 }
 
-.text_content {
-  margin: 1em;
+.character_details {
+  margin: 0.8em;
 }
 
 .alive {
@@ -80,15 +74,46 @@
 .alive_text {
   color: #fff;
   line-height: 1;
+  width: 50%;
+  margin-left: 0.2em;
 }
 
 .dead_text {
   line-height: 1;
   color: #fff;
+  width: 50%;
+  margin-left: 0.2em;
 }
 
 .type {
   line-height: 1;
-  margin-left: 0.4em;
+  margin-left: 0.1em;
+  margin-top: 0.4em;
   color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 900px) {
+  .card_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .character_image,
+  .image_not_available {
+    width: 180px;
+  }
+}
+
+.location_title {
+  color: rgb(142, 139, 139);
+}
+.location_text {
+  color: white;
+}
+
+.location_text:hover {
+  color: aquamarine;
 }

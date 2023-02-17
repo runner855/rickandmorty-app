@@ -58,7 +58,7 @@
 }
 
 .nav-item:hover {
-  border-bottom: 2px solid #09bef0;
+  border-bottom: 2px solid aquamarine;
 }
 
 .nav-links {
@@ -71,7 +71,7 @@
 }
 
 .activated {
-  color: #09bef0;
+  color: aquamarine;
 }
 
 .fa-bars {
@@ -114,7 +114,7 @@
   }
 
   .nav-links:hover {
-    color: #09bef0;
+    color: aquamarine;
     transform: scale(1.2);
     transition: all 0.3s ease;
   }
@@ -147,8 +147,22 @@
 }
 
 .user_avatar {
-  height: 3.1em;
+  height: 2.2em;
   margin: 0.4em;
   border-radius: 50px;
   border: 2px solid #fff;
+}
+
+.user_avatar:hover {
+  height: 2.2em;
+  margin: 0.4em;
+  border-radius: 50px;
+  border: 2px solid aquamarine;
+  cursor: pointer;
+}
+
+.userName {
+  color: white;
+  font-weight: 800;
+  font-size: 14px;
 }

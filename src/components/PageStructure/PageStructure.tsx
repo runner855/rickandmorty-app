@@ -6,7 +6,6 @@ import { Render } from "../Render/Render";
 
 export const PageStructure = () => {
   const params = useParams();
-  console.log(params);
 
   const [data, setData] = useState<DataProps[] | undefined>();
   useEffect(() => {
