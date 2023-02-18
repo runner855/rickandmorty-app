@@ -5,10 +5,13 @@ import { IconContext } from "react-icons/lib";
 import { NavLink } from "react-router-dom";
 import { NavBarElements } from "../../Utilities/utility";
 import UserIcon from "../../images/user_icon.png";
-import { Select, Space, Modal } from "antd";
+import { Modal } from "antd";
 import { Users } from "../../constants/dictionary";
+import { GiExitDoor } from "react-icons/gi";
+import { useNavigate } from "react-router-dom";
 
 export const NavBar = () => {
+  const navigate = useNavigate();
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -20,6 +23,7 @@ export const NavBar = () => {
     setFilteredUsers(
       Users.filter((user) => `${user.name} ${user.surname}` === name)
     );
+    console.log(filteredUsers);
   };
 
   const users = Array.from(
@@ -50,13 +54,19 @@ export const NavBar = () => {
         <nav className="navbar">
           <div className="navbar-container container">
             <div className="navbar_logo" onClick={showModal}>
-              <img className="user_avatar" src={UserIcon} alt="logo" />
+              {userName ? (
+                <img className="user_avatar" src={UserIcon} alt="logo" />
+              ) : (
+                <div className="login_label" onClick={showModal}>
+                  Login/Register
+                </div>
+              )}
               <div className="userName">{userName}</div>
             </div>
 
             <Modal open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
               <div className="login_select">
-                <div className="login">{userName ? "Login" : "Register"}</div>
+                <div className="login">Login</div>
                 <select onChange={handleChange}>
                   <option value="">Select User</option>
 
@@ -70,6 +80,22 @@ export const NavBar = () => {
                     );
                   })}
                 </select>
+                <div>{userName ? "" : "Don't have an account?"}</div>
+                <div className="exit_signup_container">
+                  <ul>
+                    <li className="logout" onClick={() => setUserName("")}>
+                      <GiExitDoor />
+                    </li>
+                    <li className="signup">
+                      <button
+                        className="signup_button"
+                        onClick={() => navigate("/registerform")}
+                      >
+                        Sign Up
+                      </button>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </Modal>
             <div className="menu-icon" onClick={handleClick}>

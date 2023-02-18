@@ -51,7 +51,7 @@ interface EpisodesProps {
   created: string;
 }
 
-interface UsersProps {
+export interface UsersProps {
   name: string;
   surname: string;
   email: string;

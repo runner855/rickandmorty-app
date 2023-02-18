@@ -166,3 +166,40 @@
   font-weight: 800;
   font-size: 14px;
 }
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin-top: 1em;
+}
+
+.logout svg {
+  margin-right: 1em;
+  color: black !important;
+  font-size: 2em;
+}
+
+.signup .signup_button {
+  height: 2em;
+  padding: 0.3em;
+  font-weight: 800;
+}
+
+.signup_button:hover {
+  cursor: pointer;
+}
+
+.logout:hover {
+  cursor: pointer;
+}
+
+.login_label {
+  color: white;
+  margin: 2em;
+  font-weight: 800;
+}
+.login_label:hover {
+  cursor: pointer;
+  color: aquamarine;
+}

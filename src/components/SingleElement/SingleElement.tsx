@@ -14,5 +14,7 @@ export const SingleElement = () => {
       });
   }, [params]);
 
+  console.log(cardDetails);
+
   return <div>Data here</div>;
 };
