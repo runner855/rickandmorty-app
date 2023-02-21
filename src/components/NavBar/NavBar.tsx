@@ -6,24 +6,37 @@ import { NavLink } from "react-router-dom";
 import { NavBarElements } from "../../Utilities/utility";
 import UserIcon from "../../images/user_icon.png";
 import { Modal } from "antd";
-import { Users } from "../../constants/dictionary";
+import { Users } from "../../Utilities/utility";
 import { GiExitDoor } from "react-icons/gi";
+import {
+  MODAL_SIGNUPLINK_LABEL,
+  MODAL_ACCOUNTDETAILS_LABEL,
+} from "../../constants/dictionary";
+import {
+  MODAL_LOGINREGISTER_LABEL,
+  MODAL_LOGIN_LABEL,
+} from "../../constants/dictionary";
 import { useNavigate } from "react-router-dom";
+import { AccountDetails } from "../AccountDetails/AccountDetails";
+import { UsersProps } from "../../types/Apptypes";
 
-export const NavBar = () => {
-  const navigate = useNavigate();
+type UserDetailsProps = {
+  accounts: UsersProps[];
+};
+
+export const NavBar = ({ accounts }: UserDetailsProps) => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
   const [filteredUsers, setFilteredUsers] = useState(Users);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [userName, setUserName] = useState<string | undefined>();
+  const navigate = useNavigate();
 
   const filterByUser = (name: string) => {
     setFilteredUsers(
       Users.filter((user) => `${user.name} ${user.surname}` === name)
     );
-    console.log(filteredUsers);
   };
 
   const users = Array.from(
@@ -48,6 +61,13 @@ export const NavBar = () => {
     filterByUser(e.target.value);
   };
 
+  const handleFormOpen = () => {
+    navigate("/registerform");
+    setIsModalOpen(false);
+  };
+
+  console.log(accounts);
+
   return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
@@ -57,42 +77,58 @@ export const NavBar = () => {
               {userName ? (
                 <img className="user_avatar" src={UserIcon} alt="logo" />
               ) : (
-                <div className="login_label" onClick={showModal}>
-                  Login/Register
+                <div
+                  className="login_label"
+                  onClick={() => {
+                    setIsModalOpen(true);
+                  }}
+                >
+                  {MODAL_LOGINREGISTER_LABEL}
                 </div>
               )}
               <div className="userName">{userName}</div>
             </div>
 
             <Modal open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-              <div className="login_select">
-                <div className="login">Login</div>
-                <select onChange={handleChange}>
-                  <option value="">Select User</option>
+              <div className="account_details_container">
+                {userName ? MODAL_ACCOUNTDETAILS_LABEL : MODAL_LOGIN_LABEL}
 
-                  {Users.map((selectedUser) => {
-                    return (
-                      <option
-                        key={`${selectedUser.name} ${selectedUser.surname}`}
+                {userName ? (
+                  <AccountDetails accounts={accounts} />
+                ) : (
+                  <select onChange={handleChange}>
+                    <option value="">Select User</option>
+
+                    {accounts.map((selectedUser) => {
+                      return (
+                        <option
+                          key={`${selectedUser.name} ${selectedUser.surname}`}
+                        >
+                          {`${selectedUser.name} ${selectedUser.surname}`}
+                        </option>
+                      );
+                    })}
+                  </select>
+                )}
+                <div>
+                  {`${userName}` ? "" : "Don't have an account?"}
+                  {userName ? (
+                    ""
+                  ) : (
+                    <li className="signup">
+                      <button
+                        className="signup_button"
+                        onClick={handleFormOpen}
                       >
-                        {`${selectedUser.name} ${selectedUser.surname}`}
-                      </option>
-                    );
-                  })}
-                </select>
-                <div>{userName ? "" : "Don't have an account?"}</div>
+                        {MODAL_SIGNUPLINK_LABEL}
+                      </button>
+                    </li>
+                  )}
+                </div>
                 <div className="exit_signup_container">
                   <ul>
                     <li className="logout" onClick={() => setUserName("")}>
                       <GiExitDoor />
-                    </li>
-                    <li className="signup">
-                      <button
-                        className="signup_button"
-                        onClick={() => navigate("/registerform")}
-                      >
-                        Sign Up
-                      </button>
                     </li>
                   </ul>
                 </div>

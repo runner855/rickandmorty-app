@@ -68,6 +68,7 @@
   text-decoration: none;
   padding: 0.5rem 1rem;
   height: 100%;
+  font-weight: 800;
 }
 
 .activated {
@@ -184,6 +185,12 @@ ul {
   height: 2em;
   padding: 0.3em;
   font-weight: 800;
+  margin-top: 3em;
+  background-color: black;
+  color: white;
+  border: solid black 1px;
+  border-radius: 3em;
+  padding: 0.4em;
 }
 
 .signup_button:hover {
@@ -192,6 +199,19 @@ ul {
 
 .logout:hover {
   cursor: pointer;
+}
+.logout {
+  margin: 1.5em 0.6em 0em 0.6em;
+  border: solid 0.2em black;
+  background-color: white;
+  border-radius: 1em;
+  font-size: 10px;
+  padding: 0.2em;
+}
+
+.logout svg {
+  /* color: white !important; */
+  margin: 0.1em;
 }
 
 .login_label {
@@ -202,4 +222,30 @@ ul {
 .login_label:hover {
   cursor: pointer;
   color: aquamarine;
+}
+
+.account_details_header {
+  font-weight: 800;
+}
+
+.account_details_container {
+  border: solid black 2px;
+  border-radius: 5px;
+  /* width: 250px; */
+  text-align: center;
+  background-color: aquamarine;
+  color: black;
+  padding: 5px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+select {
+  margin: 1em;
+  padding: 0.6em;
+  border: solid black 1px;
+  border-radius: 2em;
+  background-color: black;
+  color: white;
+  font-weight: 800;
 }

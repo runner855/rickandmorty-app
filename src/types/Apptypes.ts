@@ -8,6 +8,15 @@ export enum LanguageEnum {
   EN = "en",
 }
 
+export enum ModalContentEnum {
+  LOGIN = "Login",
+  REGISTER = "Register",
+  LOGOUT = "Logout",
+  SUBMIT = "Submit",
+  CLEAR = "Clear",
+  ACCOUNT_DETAILS = "Account Details",
+}
+
 export interface DataProps {
   name: string;
   created: string;

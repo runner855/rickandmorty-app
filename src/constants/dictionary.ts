@@ -4,32 +4,11 @@ export const LOCATIONS_LABEL = "Locations";
 
 export const EPISODES_LABEL = "Episodes";
 
-export const Users = [
-  {
-    name: "Fiona",
-    surname: "Bailey",
-    email: "fiona.bailey@gmail.com",
-    street: "60 The Grove",
-    city: "London",
-    postcode: "N962IC",
-    country: "United Kingdom",
-  },
-  {
-    name: "Mike",
-    surname: "Brown",
-    email: "mike.brown@gmail.com",
-    street: "543 Manchester Road",
-    city: "Bristol",
-    postcode: "BS533NC",
-    country: "United Kingdom",
-  },
-  {
-    name: "Steven",
-    surname: "Sutton",
-    email: "s.sutton@gmail.com",
-    street: "58 Victoria Road",
-    city: "Liverpool",
-    postcode: "L125LP",
-    country: "United Kingdom",
-  },
-];
+export const MODAL_LOGIN_LABEL = "Login";
+export const MODAL_ACCOUNTDETAILS_LABEL = "Account Details :";
+export const MODAL_SIGNUP_LABEL = "Don't have an account?";
+export const MODAL_SIGNUPLINK_LABEL = "SignUp";
+export const MODAL_LOGOUTLINK_LABEL = "Logout";
+export const MODAL_SUBMIT_LABEL = "Sumbit";
+export const MODAL_CLEAR_LABEL = "Clear";
+export const MODAL_LOGINREGISTER_LABEL = "Login/Register";

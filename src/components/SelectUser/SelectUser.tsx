@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Users } from "../../constants/dictionary";
+import { Users } from "../../Utilities/utility";
 
 interface UserNameProps {
   onValueChange: (newValue: string) => void;

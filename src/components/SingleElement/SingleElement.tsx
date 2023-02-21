@@ -5,6 +5,7 @@ import { DataProps } from "../../types/Apptypes";
 
 export const SingleElement = () => {
   const [cardDetails, setCardDetails] = useState<DataProps[]>([]);
+  const [values, setValues] = useState<string>();
   const params = useParams();
 
   useEffect(() => {
@@ -16,5 +17,5 @@ export const SingleElement = () => {
 
   console.log(cardDetails);
 
-  return <div>Data here</div>;
+  return <div>data</div>;
 };

@@ -1,8 +1,16 @@
 {
     "cSpell.words": [
+        "ACCOUNTDETAILS",
         "antd",
         "Apptypes",
+        "LOGINREGISTER",
+        "LOGOUTLINK",
+        "noaccount",
+        "registerform",
         "signup",
-        "singleelement"
+        "SIGNUPLINK",
+        "singleelement",
+        "singup",
+        "Sumbit"
     ]
 }
